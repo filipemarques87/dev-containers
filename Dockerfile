@@ -41,7 +41,7 @@ RUN pip install --upgrade pip
 # ---------------------
 # Nodejs
 # ---------------------
-RUN curl -fsSL https://raw.githubusercontent.com/mklement0/n-install/stable/bin/n-install | bash -s 24
+RUN curl -fsSL https://raw.githubusercontent.com/mklement0/n-install/stable/bin/n-install | zsh -s 24
 
 # ----------------------
 # User setup
