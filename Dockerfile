@@ -19,6 +19,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     ripgrep \
     fzf \
     sudo \
+    make \
  && rm -rf /var/lib/apt/lists/* /usr/share/doc /usr/share/man /var/cache/*
 
 # ----------------------
@@ -30,13 +31,17 @@ RUN curl -fsSL https://github.com/neovim/neovim/releases/latest/download/nvim-li
 # ----------------------
 # Go
 # ----------------------
-RUN curl -fsSL "https://go.dev/dl/go${GO_VERSION}.linux-amd64.tar.gz" \
-    | tar -C /usr/local -xz
+RUN curl -fsSL "https://go.dev/dl/go${GO_VERSION}.linux-amd64.tar.gz" | tar -C /usr/local -xz
 
 # ----------------------
 # Python
 # ----------------------
 RUN pip install --upgrade pip
+
+# ---------------------
+# Nodejs
+# ---------------------
+RUN curl -fsSL https://raw.githubusercontent.com/mklement0/n-install/stable/bin/n-install | bash -s 24
 
 # ----------------------
 # User setup
