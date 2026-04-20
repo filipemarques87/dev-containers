@@ -4,7 +4,7 @@ ENV DEBIAN_FRONTEND=noninteractive \
     PIP_NO_CACHE_DIR=1 \
     GO_VERSION=1.26.1 \
     GOPATH="/go" \
-    PATH="/usr/local/go/bin:/go/bin:/opt/nvim-linux-x86_64/bin:${PATH}"
+    PATH="/root/n/bin:/usr/local/go/bin:/go/bin:/opt/nvim-linux-x86_64/bin:${PATH}"
 
 # ----------------------
 # System packages
@@ -42,7 +42,7 @@ RUN pip install --upgrade pip
 # ---------------------
 # Nodejs
 # ---------------------
-RUN curl -fsSL https://raw.githubusercontent.com/mklement0/n-install/stable/bin/n-install | bash -s 24
+RUN curl -fsSL https://raw.githubusercontent.com/mklement0/n-install/stable/bin/n-install | bash -s -- -y 24
 
 # ----------------------
 # User setup
